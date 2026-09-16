@@ -1,0 +1,17 @@
+# Root .gitignore
+node_modules/
+.env
+.env.*
+.env.local
+.DS_Store
+
+# Contract build files
+contracts/artifacts/
+contracts/cache/
+contracts/typechain-types/
+contracts/.env
+
+# Frontend build files
+frontend/.next/
+frontend/out/
+frontend/.env.local

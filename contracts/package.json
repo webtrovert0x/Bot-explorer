@@ -1,0 +1,19 @@
+{
+  "name": "explorer-bot-contracts",
+  "version": "1.0.0",
+  "description": "Smart contracts for Explorer Bot on Bohr Testnet (Chain ID 968)",
+  "main": "index.js",
+  "scripts": {
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "deploy:bohr": "hardhat run scripts/deploy.js --network bohrTestnet"
+  },
+  "keywords": ["bohr", "web3", "explorer", "contracts"],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^4.0.0",
+    "dotenv": "^16.4.5",
+    "hardhat": "^2.22.2"
+  }
+}
