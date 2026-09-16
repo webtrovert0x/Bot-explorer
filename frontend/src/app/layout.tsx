@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Web3Provider } from "@/context/Web3Provider";
-import { Navbar } from "@/components/Navbar";
 
 export const metadata: Metadata = {
   title: "Explorer Bot | On-Chain Intelligence, Drainer Defense & Wrapped on Bohr Network",
@@ -27,7 +26,6 @@ export default function RootLayout({
             <div className="fixed inset-0 bg-cyber-grid bg-[size:40px_40px] pointer-events-none opacity-40 z-0" />
 
             <div className="relative z-10">
-              <Navbar />
               <main className="flex-1">{children}</main>
             </div>
 
