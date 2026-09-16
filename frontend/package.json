@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@base-org/account": "^2.5.10",
+    "@coinbase/cdp-sdk": "^1.56.0",
     "@metamask/connect-evm": "^2.1.1",
     "@reown/appkit": "^1.6.8",
     "@reown/appkit-adapter-wagmi": "^1.6.8",
