@@ -30,11 +30,11 @@ export function PaywallModal({
   });
 
   const SCAN_FEE_BOT = process.env.NEXT_PUBLIC_SCAN_FEE_BOT || "0.1";
-  const TREASURY_RECIPIENT =
-    process.env.NEXT_PUBLIC_PAYMENT_CONTRACT !== "0x0000000000000000000000000000000000000000" &&
-    process.env.NEXT_PUBLIC_PAYMENT_CONTRACT
-      ? (process.env.NEXT_PUBLIC_PAYMENT_CONTRACT as `0x${string}`)
-      : ("0x39a3fF76e93D6d0B8D9197793d567f7e914041a9" as `0x${string}`);
+  const rawContract = process.env.NEXT_PUBLIC_PAYMENT_CONTRACT;
+  const TREASURY_RECIPIENT: `0x${string}` =
+    rawContract && isAddress(rawContract) && rawContract !== "0x0000000000000000000000000000000000000000"
+      ? (rawContract as `0x${string}`)
+      : "0x5D6c221eE1A0E40fa58CEBAc83A359DCde9bd34f";
 
   const [scanType, setScanType] = useState<"FREE" | "PRO">("FREE");
 
