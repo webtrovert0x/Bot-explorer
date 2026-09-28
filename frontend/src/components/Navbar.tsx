@@ -1,11 +1,12 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useAccount, useBalance, useDisconnect } from "wagmi";
 import { useAppKit } from "@reown/appkit/react";
-import { Shield, Zap, ExternalLink, Wallet, CheckCircle, Flame, ArrowUpRight, Swords, Trophy, Bell } from "lucide-react";
+import { Shield, Zap, ExternalLink, Wallet, CheckCircle, Flame, ArrowUpRight, Swords, Trophy, Bell, TrendingUp } from "lucide-react";
 import { botchainMainnet } from "@/config/chains";
 import { formatUnits } from "viem";
+import { fetchLiveBotPrice } from "@/services/bohrScanner";
 
 interface NavbarProps {
   currentView?: "EXPLORER" | "BATTLE" | "LEADERBOARD";
@@ -17,6 +18,15 @@ export function Navbar({ currentView = "EXPLORER", onSelectView, onOpenAlerts }:
   const { address, isConnected } = useAccount();
   const { open } = useAppKit();
   const { disconnect } = useDisconnect();
+  const [livePrice, setLivePrice] = useState<number | null>(null);
+
+  useEffect(() => {
+    fetchLiveBotPrice().then((p) => setLivePrice(p));
+    const interval = setInterval(() => {
+      fetchLiveBotPrice().then((p) => setLivePrice(p));
+    }, 15000);
+    return () => clearInterval(interval);
+  }, []);
 
   const { data: balance } = useBalance({
     address: address,
@@ -109,6 +119,15 @@ export function Navbar({ currentView = "EXPLORER", onSelectView, onOpenAlerts }:
             <Bell className="w-3.5 h-3.5 text-cyan-400" />
             <span className="hidden sm:inline">Bot Alerts</span>
           </button>
+
+          {/* Live BOT/USDT Price Badge */}
+          <div className="hidden md:flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-xs text-slate-300 font-medium" title="Live BOT/USDT price from Coinstore">
+            <TrendingUp className="w-3.5 h-3.5 text-emerald-400" />
+            <span className="text-slate-400">BOT:</span>
+            <span className="text-emerald-400 font-bold font-mono">
+              ${livePrice !== null ? livePrice.toFixed(2) : "12.40"}
+            </span>
+          </div>
 
           {/* Scan Rate Badge */}
           <div className="hidden lg:flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs text-slate-300 font-medium">

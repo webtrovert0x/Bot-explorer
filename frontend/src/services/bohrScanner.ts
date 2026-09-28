@@ -16,7 +16,62 @@ export const bohrClient = createPublicClient({
   transport: http("https://rpc.botchain.ai"),
 });
 
-export const BOT_USD_PRICE = 0.45;
+// Default cached BOT USD Price (Coinstore live ticker fallback)
+let cachedBotPrice = 12.399;
+let lastPriceFetchTime = 0;
+
+/**
+ * Fetch live BOT/USDT price from Coinstore API
+ */
+export async function fetchLiveBotPrice(): Promise<number> {
+  const now = Date.now();
+  // Return cached price if fetched within the last 15 seconds
+  if (now - lastPriceFetchTime < 15000 && cachedBotPrice > 0) {
+    return cachedBotPrice;
+  }
+
+  try {
+    // 1. Try local API route proxy
+    const localRes = await fetch("/api/bot-price", { cache: "no-store" });
+    if (localRes.ok) {
+      const data = await localRes.json();
+      if (data?.price && typeof data.price === "number" && data.price > 0) {
+        cachedBotPrice = data.price;
+        lastPriceFetchTime = now;
+        return cachedBotPrice;
+      }
+    }
+  } catch (err) {
+    // Continue to direct Coinstore ticker fallback
+  }
+
+  try {
+    // 2. Direct Coinstore ticker fetch fallback
+    const res = await fetch("https://api.coinstore.com/api/v1/ticker/price", {
+      headers: { Accept: "application/json" },
+    });
+    if (res.ok) {
+      const data = await res.json();
+      const botItem = (data.data || []).find(
+        (item: any) => item.symbol?.toUpperCase() === "BOTUSDT"
+      );
+      if (botItem?.price) {
+        const parsed = parseFloat(botItem.price);
+        if (parsed > 0) {
+          cachedBotPrice = parsed;
+          lastPriceFetchTime = now;
+          return cachedBotPrice;
+        }
+      }
+    }
+  } catch (err) {
+    console.warn("Could not fetch live BOT price from Coinstore, using fallback:", err);
+  }
+
+  return cachedBotPrice;
+}
+
+export const BOT_USD_PRICE = 12.399;
 export const EXPLORER_BASE = "https://scan.botchain.ai";
 const BOHR_API_BASE = "https://scan.botchain.ai/api/v2";
 
@@ -324,7 +379,9 @@ export async function scanBohrWallet(addressInput: string): Promise<WalletScanRe
     };
   });
 
-  // 6. Calculate Real Gas Burned & Genesis Origin
+  // 6. Fetch Live BOT Price from Coinstore & Calculate Real Gas Burned
+  const currentBotPrice = await fetchLiveBotPrice();
+
   let totalGasBurnedBOT = 0;
   for (const tx of txItems) {
     const gasUsed = tx.gas_used ? parseFloat(tx.gas_used) : 21000;
@@ -334,7 +391,7 @@ export async function scanBohrWallet(addressInput: string): Promise<WalletScanRe
   if (totalGasBurnedBOT === 0 && txNonce > 0) {
     totalGasBurnedBOT = txNonce * 0.00085;
   }
-  const gasBurnedUSD = +(totalGasBurnedBOT * BOT_USD_PRICE).toFixed(2);
+  const gasBurnedUSD = +(totalGasBurnedBOT * currentBotPrice).toFixed(2);
 
   const oldestTx = txItems.length > 0 ? txItems[txItems.length - 1] : null;
   let originDate = "Recent";
@@ -356,8 +413,8 @@ export async function scanBohrWallet(addressInput: string): Promise<WalletScanRe
       symbol: "BOT",
       address: "0x0000000000000000000000000000000000000000",
       balance: +realBalanceBOT.toFixed(4),
-      priceUSD: BOT_USD_PRICE,
-      valueUSD: +(realBalanceBOT * BOT_USD_PRICE).toFixed(2),
+      priceUSD: currentBotPrice,
+      valueUSD: +(realBalanceBOT * currentBotPrice).toFixed(2),
       change24h: 1.8,
       isVerified: true,
       iconUrl: "/logo.png",
@@ -391,7 +448,7 @@ export async function scanBohrWallet(addressInput: string): Promise<WalletScanRe
           t.icon_url ||
           "https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?w=500&auto=format&fit=crop&q=60",
         floorPriceBOT: 0.5,
-        floorPriceUSD: +(0.5 * BOT_USD_PRICE).toFixed(2),
+        floorPriceUSD: +(0.5 * currentBotPrice).toFixed(2),
       });
     } else {
       const isSus =
@@ -515,7 +572,7 @@ export async function scanBohrWallet(addressInput: string): Promise<WalletScanRe
     chainId: 677,
     scanTimestamp: new Date().toISOString(),
     nativeBalanceBOT: +realBalanceBOT.toFixed(4),
-    nativeBalanceUSD: +(realBalanceBOT * BOT_USD_PRICE).toFixed(2),
+    nativeBalanceUSD: +(realBalanceBOT * currentBotPrice).toFixed(2),
     totalPortfolioUSD,
     security: {
       healthScore,

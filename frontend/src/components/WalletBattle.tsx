@@ -10,7 +10,7 @@ import confetti from "canvas-confetti";
 
 export function WalletBattle() {
   const [addr1, setAddr1] = useState("0x293ed7F710D056887C6e3Ef5EdBC9B95e32f03a4");
-  const [addr2, setAddr2] = useState("0xf534f5C4759C649e7F04A535bAcfeE0A0E855970");
+  const [addr2, setAddr2] = useState("0x7B41538Aeb19420Ebcf680c16e4e86D561D2525D");
   const [loading, setLoading] = useState(false);
   const [report1, setReport1] = useState<WalletScanReport | null>(null);
   const [report2, setReport2] = useState<WalletScanReport | null>(null);

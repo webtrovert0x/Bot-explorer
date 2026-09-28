@@ -51,7 +51,7 @@ export function ShareableCard({
   };
 
   const shareText = encodeURIComponent(
-    `Just generated my On-Chain Wrapped dossier on @BotchainAI with Explorer Bot! ⚡\n\n🛡️ Wallet Age: ${wrapped.walletAgeDays} Days\n🔥 Lifetime Gas Burned: ${wrapped.lifetimeGasBurnedBOT} BOT\n💎 Peak ATH Worth: $${wrapped.athNetWorthUSD.toLocaleString()}\n\nCheck yours at explorerbot.life`
+    `Just generated my On-Chain Wrapped dossier on @BotchainAI with Explorer Bot! ⚡\n\n🛡️ Wallet Age: ${wrapped.walletAgeDays} Days\n🔥 Lifetime Gas Burned: ${wrapped.lifetimeGasBurnedBOT} BOT\n💎 Peak ATH Worth: $${wrapped.athNetWorthUSD.toLocaleString()}\n\nCheck yours at https://bot-explorer.vercel.app`
   );
 
   return (
