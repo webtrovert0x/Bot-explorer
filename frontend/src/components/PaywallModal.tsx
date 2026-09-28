@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { useAccount, useSendTransaction, useBalance } from "wagmi";
-import { parseEther, formatUnits } from "viem";
+import { parseEther, formatUnits, isAddress } from "viem";
 import { useAppKit } from "@reown/appkit/react";
 import { Shield, Zap, X, AlertCircle, CheckCircle2, RefreshCw, Flame, Sparkles } from "lucide-react";
 import { botchainMainnet } from "@/config/chains";
