@@ -8,7 +8,7 @@
     "test": "hardhat test",
     "deploy:mainnet": "hardhat run scripts/deploy.js --network botchainMainnet"
   },
-  "keywords": ["bohr", "web3", "explorer", "contracts"],
+  "keywords": ["botchain", "web3", "explorer", "contracts"],
   "author": "",
   "license": "MIT",
   "devDependencies": {

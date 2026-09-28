@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  <strong>Next-Gen On-Chain Wallet Intelligence, Drainer Defense Radar & "On-Chain Wrapped" on Bohr Network</strong>
+  <strong>Next-Gen On-Chain Wallet Intelligence, Drainer Defense Radar & "On-Chain Wrapped" on BOT Chain Mainnet</strong>
 </p>
 
 <p align="center">

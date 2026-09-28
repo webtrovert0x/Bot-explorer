@@ -13,7 +13,7 @@ export const botchainMainnet = defineChain({
   name: "BOT Chain Mainnet",
   nativeCurrency: {
     decimals: 18,
-    name: "Bohr Token",
+    name: "Botchain Token",
     symbol: "BOT",
   },
   rpcUrls: {

@@ -58,19 +58,19 @@ export interface LeaderboardEntry {
 }
 
 /**
- * Fetch 100% Real Live Leaderboard Data from Bohr RPC & BohrScan
+ * Fetch 100% Real Live Leaderboard Data from BotScan & BOT Chain RPC
  */
 export async function fetchBohrLeaderboard(): Promise<LeaderboardEntry[]> {
   const targetAddresses = [
     { addr: "0xf534f5C4759C649e7F04A535bAcfeE0A0E855970", label: "Genesis Funder & Whale", category: "Genesis Pioneer" },
     { addr: "0x293ed7F710D056887C6e3Ef5EdBC9B95e32f03a4", label: "Deployer & Trader", category: "Active Degen" },
-    { addr: "0x01784C6fcE7E1fB40E9E54E449C0c5AcF9946Fe1", label: "ExplorerPayment Treasury", category: "Smart Contract" },
+    { addr: "0x5D6c221eE1A0E40fa58CEBAc83A359DCde9bd34f", label: "ExplorerPayment Treasury", category: "Smart Contract" },
     { addr: "0x75edC9335175Fc0552D51D48439F229c10420fe3", label: "USDT Contract Hub", category: "Token Hub" },
     { addr: "0xF54395981DE2C04e24AE348fBC8116E9736Dfff7", label: "Moon Doge Contract", category: "Meme Ecosystem" },
-    { addr: "0xF96e55D390802e79Df300B6920C120bb43fAAd0A", label: "Recent Bohr Transactor", category: "Active User" },
+    { addr: "0xF96e55D390802e79Df300B6920C120bb43fAAd0A", label: "Recent Botchain Transactor", category: "Active User" },
   ];
 
-  // Try to fetch latest active transactor addresses from BohrScan API
+  // Try to fetch latest active transactor addresses from BotScan API
   try {
     const txRes = await fetch(`${BOHR_API_BASE}/transactions`);
     if (txRes.ok) {
@@ -80,7 +80,7 @@ export async function fetchBohrLeaderboard(): Promise<LeaderboardEntry[]> {
           if (tx.from?.hash && !targetAddresses.some((t) => t.addr.toLowerCase() === tx.from.hash.toLowerCase())) {
             targetAddresses.push({
               addr: tx.from.hash,
-              label: "Bohr On-Chain User",
+              label: "Botchain On-Chain User",
               category: "Live Transactor",
             });
           }
@@ -127,7 +127,7 @@ export async function fetchBohrLeaderboard(): Promise<LeaderboardEntry[]> {
         ageDays = 1;
         healthScore = 100;
       } else {
-        badges.push("⚡ Bohr User", "🛡️ Audited");
+        badges.push("⚡ Botchain User", "🛡️ Audited");
         ageDays = Math.max(1, txCount * 2);
         healthScore = 90;
       }
@@ -279,7 +279,7 @@ export async function scanBohrWallet(addressInput: string): Promise<WalletScanRe
   // 7. Parse Real Tokens
   const parsedTokens: TokenHolding[] = [
     {
-      name: "Bohr Native Token",
+      name: "Botchain Native Token",
       symbol: "BOT",
       address: "0x0000000000000000000000000000000000000000",
       balance: +realBalanceBOT.toFixed(4),
@@ -287,7 +287,7 @@ export async function scanBohrWallet(addressInput: string): Promise<WalletScanRe
       valueUSD: +(realBalanceBOT * BOT_USD_PRICE).toFixed(2),
       change24h: 1.8,
       isVerified: true,
-      iconUrl: "https://scan.bohr.life/images/logo.png",
+      iconUrl: "/logo.png",
     },
   ];
 
@@ -310,8 +310,8 @@ export async function scanBohrWallet(addressInput: string): Promise<WalletScanRe
     if (t.type === "ERC-721" || t.type === "ERC-1155") {
       nfts.push({
         id: `nft-${t.address}-${item.token_id || "1"}`,
-        name: `${t.name || "Bohr Collectible"} #${item.token_id || "1"}`,
-        collection: t.name || "Bohr NFT",
+        name: `${t.name || "Botchain Collectible"} #${item.token_id || "1"}`,
+        collection: t.name || "Botchain NFT",
         contractAddress: t.address,
         tokenId: item.token_id || "1",
         imageUrl:
@@ -398,10 +398,10 @@ export async function scanBohrWallet(addressInput: string): Promise<WalletScanRe
   // 9. Generate Real On-Chain Badges
   const personas = [
     {
-      title: "Bohr Pioneer",
+      title: "Botchain Pioneer",
       icon: "⚡",
       badgeColor: "from-cyan-500 to-blue-600",
-      description: `Active on Bohr Network for ${walletAgeDays} days across ${Math.max(
+      description: `Active on Botchain for ${walletAgeDays} days across ${Math.max(
         txItems.length,
         txNonce
       )} verified transactions.`,
@@ -413,7 +413,7 @@ export async function scanBohrWallet(addressInput: string): Promise<WalletScanRe
       title: "Gas Contributor",
       icon: "🔥",
       badgeColor: "from-amber-500 to-red-600",
-      description: `Burned ${totalGasBurnedBOT.toFixed(4)} BOT in gas fees to Bohr validators.`,
+      description: `Burned ${totalGasBurnedBOT.toFixed(4)} BOT in gas fees to Botchain validators.`,
     });
   }
 
@@ -422,7 +422,7 @@ export async function scanBohrWallet(addressInput: string): Promise<WalletScanRe
       title: "Multi-Asset Holder",
       icon: "💎",
       badgeColor: "from-emerald-400 to-teal-600",
-      description: `Holds ${parsedTokens.length} distinct token assets on Bohr Network.`,
+      description: `Holds ${parsedTokens.length} distinct token assets on Botchain.`,
     });
   }
 
@@ -461,7 +461,7 @@ export async function scanBohrWallet(addressInput: string): Promise<WalletScanRe
       recommendations: [
         "Revoke unused token allowances to third-party smart contracts.",
         "Never interact with or approve unsolicited airdrop tokens.",
-        "Always verify contract addresses on BohrScan before signing.",
+        "Always verify contract addresses on BotScan before signing.",
       ],
     },
     wrapped: {
@@ -476,7 +476,7 @@ export async function scanBohrWallet(addressInput: string): Promise<WalletScanRe
       athNetWorthUSD,
       athDate: "Peak Milestone",
       mostActiveMonth: "Active History",
-      primaryDeFiProtocol: "Bohr Ecosystem",
+      primaryDeFiProtocol: "Botchain Ecosystem",
       personas,
     },
     tokens: parsedTokens,

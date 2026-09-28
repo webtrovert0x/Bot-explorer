@@ -95,7 +95,7 @@ Explorer Bot redefines on-chain exploration by introducing **actionable intellig
 
 ### 4.1 Pillar I: Proactive Wallet Security & Drainer Radar
 
-Explorer Bot interrogates the Bohr Network state to identify threat vectors across active approvals:
+Explorer Bot interrogates the BOT Chain state to identify threat vectors across active approvals:
 - **0–100 Wallet Health Score Formula**:
   $$\text{Health Score} = 100 - (\text{Unlimited Approvals} \times 15) - (\text{Phishing Dust Tokens} \times 20)$$
 - **Unlimited Approvals Audit**: Scans allowances where $\text{allowance} = 2^{256} - 1$, identifying authorizations given to unverified or inactive smart contracts.
@@ -120,7 +120,7 @@ Inspired by Spotify Wrapped, Explorer Bot parses historical blockchain blocks to
 - **Lifetime Gas Sacrificed**: Total native `BOT` fees paid to miners/validators converted to USD fiat equivalent.
 - **All-Time High (ATH) Net Worth**: Historical peak portfolio valuation during market cycles.
 - **DeFi Persona Badges**: Automatically awarded based on verifiable on-chain criteria:
-  - *Bohr Pioneer*: Active on Bohr Network $> 30$ days.
+  - *Botchain Pioneer*: Active on BOT Chain $> 30$ days.
   - *Gas Contributor / Guzzler*: Burned $> 0.5\text{ BOT}$ in gas fees.
   - *Ecosystem Whale*: Maintains high native BOT reserves.
   - *Diamond Hands*: Long-term holder across multiple market blocks.
@@ -130,7 +130,7 @@ Inspired by Spotify Wrapped, Explorer Bot parses historical blockchain blocks to
 
 ### 4.4 Pillar IV: Wallet VS Wallet (Degen Battle Mode)
 
-Gamifies on-chain comparison by allowing any two Bohr addresses to enter a head-to-head battle:
+Gamifies on-chain comparison by allowing any two BOT Chain addresses to enter a head-to-head battle:
 - Side-by-side comparison across **Lifetime Gas Burned**, **Wallet Age**, **Security Health Score**, and **Total Portfolio Value**.
 - Automated winner determination with cyber trophy highlights.
 - 1-Click shareable "Versus Battle Card" for social bragging rights.
@@ -139,7 +139,7 @@ Gamifies on-chain comparison by allowing any two Bohr addresses to enter a head-
 
 ### 4.5 Pillar V: Real-Time Ecosystem Leaderboard & 24/7 Alerts
 
-- **100% Live On-Chain Data**: Continuously queries the Bohr Network RPC and BohrScan ledger to rank top accounts.
+- **100% Live On-Chain Data**: Continuously queries the BOT Chain RPC and BotScan ledger to rank top accounts.
 - **Category Filters**: Top BOT Balances (Whales), Top Gas Burned (Degens), and Oldest Genesis Wallets.
 - **24/7 Threat Sentinel**: Webhook & Telegram alert configuration notifying users when high-risk approvals, large transfers ($> 5\text{ BOT}$), or malicious airdrops occur.
 
@@ -246,11 +246,11 @@ function getStats() external view returns (uint256, uint256, uint256, uint256);
 
   PHASE 3: ADVANCED INTELLIGENCE (Q1 2027)
   🔄 Automated Telegram Sentinel Bot with Real-Time Webhook Push Notifications
-  🔄 Multi-Chain Support (Expanding Bohr Network & EVM Ecosystems)
+  🔄 Multi-Chain Support (Expanding BOT Chain & EVM Ecosystems)
   🔄 AI Smart Contract Decompiler (Instant summary of unverified router bytecode)
 
   PHASE 4: INSTITUTIONAL ECOSYSTEM (Q2 2027)
-  🔄 Bohr DAO Treasury Integration
+  🔄 BOT Chain DAO Treasury Integration
   🔄 Mobile Native Application (iOS / Android Web3 Sentinel)
   🔄 Developer SDK & API Access for Third-Party dApps
 ```
@@ -259,7 +259,7 @@ function getStats() external view returns (uint256, uint256, uint256, uint256);
 
 ## 10. Conclusion & Disclaimers
 
-**Explorer Bot** transforms blockchain exploration on the **Bohr Network** from a dry, passive ledger check into an engaging, proactive security shield and viral status platform. By combining real-time threat defense, on-chain ego metrics, and an accessible `0.1 BOT` utility fee, Explorer Bot provides indispensable value for everyday Web3 users, degens, and institutional holders alike.
+**Explorer Bot** transforms blockchain exploration on the **BOT Chain** from a dry, passive ledger check into an engaging, proactive security shield and viral status platform. By combining real-time threat defense, on-chain ego metrics, and an accessible `0.1 BOT` utility fee, Explorer Bot provides indispensable value for everyday Web3 users, degens, and institutional holders alike.
 
 ### Disclaimers:
 *Explorer Bot is a decentralized blockchain analysis tool. While the Security Radar and Drain Simulator identify known vulnerabilities and active approvals, blockchain interactions carry inherent risks. Users must always exercise personal discretion when signing smart contract transactions.*
@@ -267,8 +267,8 @@ function getStats() external view returns (uint256, uint256, uint256, uint256);
 ---
 
 <p align="center">
-  <strong>⚡ Built for the Bohr Network Ecosystem ⚡</strong><br>
+  <strong>⚡ Built for the BOT Chain Ecosystem ⚡</strong><br>
   <a href="https://github.com/webtrovert0x/Bot-explorer">GitHub Repository</a> • 
-  <a href="https://scan.bohr.life/address/0x01784C6fcE7E1fB40E9E54E449C0c5AcF9946Fe1#code">Verified Contract</a> • 
-  <a href="https://scan.bohr.life/">BohrScan</a>
+  <a href="https://scan.botchain.ai/address/0x5D6c221eE1A0E40fa58CEBAc83A359DCde9bd34f#code">Verified Contract</a> • 
+  <a href="https://scan.botchain.ai/">BotScan</a>
 </p>

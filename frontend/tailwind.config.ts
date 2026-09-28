@@ -10,7 +10,7 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        bohr: {
+        botchain: {
           cyan: "#00f0ff",
           purple: "#7928ca",
           pink: "#ff0080",

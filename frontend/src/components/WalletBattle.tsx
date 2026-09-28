@@ -46,7 +46,7 @@ export function WalletBattle() {
     try {
       const dataUrl = await toPng(cardRef.current, { quality: 0.95, pixelRatio: 2 });
       const link = document.createElement("a");
-      link.download = `bohr-battle-${addr1.slice(0, 6)}-vs-${addr2.slice(0, 6)}.png`;
+      link.download = `botchain-battle-${addr1.slice(0, 6)}-vs-${addr2.slice(0, 6)}.png`;
       link.href = dataUrl;
       link.click();
     } catch (err) {
@@ -69,7 +69,7 @@ export function WalletBattle() {
           WALLET <span className="bg-gradient-to-r from-cyan-400 via-pink-500 to-amber-400 bg-clip-text text-transparent">VS</span> WALLET
         </h2>
         <p className="text-xs sm:text-sm text-slate-300 max-w-xl mx-auto">
-          Pit two Bohr wallets head-to-head. Compare lifetime gas burned, security health, age, and portfolio status.
+          Pit two BOT Chain wallets head-to-head. Compare lifetime gas burned, security health, age, and portfolio status.
         </p>
       </div>
 

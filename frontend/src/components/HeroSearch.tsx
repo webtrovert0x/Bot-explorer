@@ -66,7 +66,7 @@ export function HeroSearch({ onInitiateScan, isScanning }: HeroSearchProps) {
 
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold bg-gradient-to-r from-cyan-500/10 to-purple-500/10 border border-cyan-500/30 text-cyan-300 shadow-lg shadow-cyan-500/10">
           <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
-          <span>Bohr Network Ledger Intelligence & Threat Radar</span>
+          <span>BOT Chain Ledger Intelligence & Threat Radar</span>
         </div>
       </div>
 

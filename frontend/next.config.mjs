@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ["scan.botchain.ai", "scan.bohr.life", "ipfs.io", "images.unsplash.com"],
+    domains: ["scan.botchain.ai", "ipfs.io", "images.unsplash.com"],
   },
   webpack: (config, { isServer }) => {
     config.resolve.fallback = {

@@ -43,7 +43,7 @@ export function OnchainWrapped({
                 <Crown className="w-3.5 h-3.5 text-yellow-400" />
                 On-Chain Wrapped Dossier
               </span>
-              <span className="text-xs text-slate-400 font-mono">Bohr Network</span>
+              <span className="text-xs text-slate-400 font-mono">BOT Chain Mainnet</span>
             </div>
 
             <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">

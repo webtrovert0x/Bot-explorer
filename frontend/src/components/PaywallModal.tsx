@@ -101,7 +101,7 @@ export function PaywallModal({
             Choose Scan Tier
           </h3>
           <p className="text-xs text-slate-400 mt-1">
-            Execute an on-chain verified scan on Bohr Network
+            Execute an on-chain verified scan on BOT Chain Mainnet
           </p>
         </div>
 
