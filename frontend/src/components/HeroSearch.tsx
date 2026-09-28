@@ -80,7 +80,7 @@ export function HeroSearch({ onInitiateScan, isScanning }: HeroSearchProps) {
 
       {/* Subtitle */}
       <p className="max-w-2xl mx-auto text-sm sm:text-base text-slate-300 mb-10 leading-relaxed">
-        Scan any Bohr Testnet wallet to expose dangerous contract approvals, uncover lifetime gas burned,
+        Scan any BOT Chain Mainnet wallet to expose dangerous contract approvals, uncover lifetime gas burned,
         calculate peak net worth, and generate a viral <span className="text-cyan-400 font-semibold">On-Chain Wrapped</span> card.
       </p>
 

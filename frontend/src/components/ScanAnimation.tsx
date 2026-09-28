@@ -9,7 +9,7 @@ interface ScanAnimationProps {
 }
 
 const SCAN_STEPS = [
-  { label: "Connecting to Bohr Testnet RPC (Chain ID 968)...", icon: Database },
+  { label: "Connecting to BOT Chain Mainnet RPC (Chain ID 677)...", icon: Database },
   { label: "Querying native BOT balance & transaction nonces...", icon: Cpu },
   { label: "Auditing token approvals & drainer exposure...", icon: Shield },
   { label: "Calculating lifetime gas burned & peak ATH net worth...", icon: Search },

@@ -112,7 +112,7 @@ export default function Home() {
                       <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-cyan-500/20 text-cyan-300 border border-cyan-500/40 uppercase tracking-wider font-mono">
                         VERIFIED ON-CHAIN DOSSIER
                       </span>
-                      <span className="text-xs text-slate-400 font-mono">Chain ID: 968 (Bohr)</span>
+                      <span className="text-xs text-slate-400 font-mono">Chain ID: 677 (BOT Chain)</span>
                     </div>
 
                     <div className="flex items-center gap-2 pt-1">
@@ -127,11 +127,11 @@ export default function Home() {
                         {copied ? <Check className="w-4 h-4 text-emerald-400" /> : <Copy className="w-4 h-4" />}
                       </button>
                       <a
-                        href={`https://scan.bohr.life/address/${report.address}`}
+                        href={`https://scan.botchain.ai/address/${report.address}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="p-1.5 rounded-lg bg-white/5 hover:bg-white/10 text-slate-400 hover:text-cyan-400 transition-colors"
-                        title="View on BohrScan"
+                        title="View on BotScan"
                       >
                         <ExternalLink className="w-4 h-4" />
                       </a>

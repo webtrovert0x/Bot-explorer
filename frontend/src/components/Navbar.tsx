@@ -4,7 +4,7 @@ import React from "react";
 import { useAccount, useBalance, useDisconnect } from "wagmi";
 import { useAppKit } from "@reown/appkit/react";
 import { Shield, Zap, ExternalLink, Wallet, CheckCircle, Flame, ArrowUpRight, Swords, Trophy, Bell } from "lucide-react";
-import { bohrTestnet } from "@/config/chains";
+import { botchainMainnet } from "@/config/chains";
 import { formatUnits } from "viem";
 
 interface NavbarProps {
@@ -20,7 +20,7 @@ export function Navbar({ currentView = "EXPLORER", onSelectView, onOpenAlerts }:
 
   const { data: balance } = useBalance({
     address: address,
-    chainId: bohrTestnet.id,
+    chainId: botchainMainnet.id,
   });
 
   const formattedBalance = balance
@@ -52,7 +52,7 @@ export function Navbar({ currentView = "EXPLORER", onSelectView, onOpenAlerts }:
                 </span>
                 <span className="hidden sm:inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-semibold bg-cyan-500/10 text-cyan-400 border border-cyan-500/30">
                   <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-ping" />
-                  BOHR 968
+                  BOT CHAIN 677
                 </span>
               </div>
               <p className="text-[11px] text-slate-400 hidden sm:block">

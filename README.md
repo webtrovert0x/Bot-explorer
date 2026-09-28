@@ -9,9 +9,9 @@
 </p>
 
 <p align="center">
-  <a href="https://scan.bohr.life/address/0x01784C6fcE7E1fB40E9E54E449C0c5AcF9946Fe1#code"><img src="https://img.shields.io/badge/Contract-Verified%20on%20BohrScan-00f0ff?style=for-the-badge&logo=solidity" alt="Contract Verified" /></a>
-  <a href="https://rpc.bohr.life"><img src="https://img.shields.io/badge/Bohr%20Chain%20ID-968-7928ca?style=for-the-badge" alt="Chain ID 968" /></a>
-  <a href="https://scan.bohr.life"><img src="https://img.shields.io/badge/Native%20Token-BOT%20(150M%20Supply)-ffd700?style=for-the-badge" alt="BOT Token" /></a>
+  <a href="https://scan.botchain.ai/address/0x5D6c221eE1A0E40fa58CEBAc83A359DCde9bd34f"><img src="https://img.shields.io/badge/Mainnet%20Contract-0x5D6c...d34f-00f0ff?style=for-the-badge&logo=solidity" alt="Mainnet Contract" /></a>
+  <a href="https://rpc.botchain.ai"><img src="https://img.shields.io/badge/BOT%20Chain%20ID-677-7928ca?style=for-the-badge" alt="Chain ID 677" /></a>
+  <a href="https://scan.botchain.ai"><img src="https://img.shields.io/badge/Native%20Token-BOT%20(150M%20Supply)-ffd700?style=for-the-badge" alt="BOT Token" /></a>
 </p>
 
 ---
@@ -20,36 +20,37 @@
 
 Free block explorers provide raw cryptographic ledger entries. **Explorer Bot** turns on-chain data into **actionable intelligence, drainer defense, and viral social status**.
 
-Users connect their Web3 wallet and pay **0.1 BOT** to unlock a deep dossier featuring their 0–100 Security Health Score, active token approval drainer risks with a 1-click revoke assistant, worst-case exploit loss simulations, and a Spotify-style "On-Chain Wrapped" card.
+Users connect their Web3 wallet to run a **Free On-Chain Scan** (gas only) or pay **0.1 BOT** to unlock a deep dossier featuring their 0–100 Security Health Score, active token approval drainer risks with a 1-click revoke assistant, worst-case exploit loss simulations, and a Spotify-style "On-Chain Wrapped" card.
 
 ---
 
-## 🚀 Live Bohr Testnet Deployment
+## 🚀 Live BOT Chain Mainnet Deployment
 
 | Parameter | Value |
 | :--- | :--- |
 | **Contract Name** | `ExplorerPayment` |
-| **Contract Address** | [`0x01784C6fcE7E1fB40E9E54E449C0c5AcF9946Fe1`](https://scan.bohr.life/address/0x01784C6fcE7E1fB40E9E54E449C0c5AcF9946Fe1#code) |
-| **Verification Status** | ✅ **100% Verified on BohrScan** (`v0.8.20+commit.a1b79de6`, 200 runs) |
-| **Network Name** | Bohr Testnet |
-| **Chain ID** | `968` |
-| **RPC Endpoint** | `https://rpc.bohr.life` |
-| **Native Currency** | `BOT` (18 Decimals) |
-| **Scan Fee** | `0.1 BOT` |
-| **Block Explorer** | [https://scan.bohr.life/](https://scan.bohr.life/) |
+| **Mainnet Contract Address** | [`0x5D6c221eE1A0E40fa58CEBAc83A359DCde9bd34f`](https://scan.botchain.ai/address/0x5D6c221eE1A0E40fa58CEBAc83A359DCde9bd34f#code) |
+| **Verification Status** | ✅ **100% Verified on BotScan** (`v0.8.20+commit.a1b79de6`, 200 runs) |
+| **Network Name** | BOT Chain Mainnet |
+| **Chain ID** | `677` |
+| **RPC Endpoint** | `https://rpc.botchain.ai` |
+| **Native Currency** | `BOT` (18 Decimals, 150M Total Supply) |
+| **Pro Scan Fee** | `0.1 BOT` (via `payForScan`) |
+| **Free Scan Fee** | `0 BOT / Gas Only` (via `registerFreeScan`) |
+| **Block Explorer** | [https://scan.botchain.ai/](https://scan.botchain.ai/) |
 
 ---
 
 ## 🛡️ Core Feature Matrix
 
 ### 1. 🔍 100% Real Live On-Chain Intelligence Scanner
-- **Live RPC Balance & Transaction Nonces**: Direct integration with Bohr RPC and BohrScan API (`https://scan.bohr.life/api/v2`).
+- **Live RPC Balance & Transaction Nonces**: Direct integration with BOT Chain RPC and BotScan API (`https://scan.botchain.ai/api/v2`).
 - **Exact Genesis Origin & Age**: Uncovers first on-chain transaction hash, genesis timestamp, and founding funder address.
 - **Lifetime Gas Sacrificed**: Total native BOT gas fees burned converted into USD fiat valuation.
-- **Real Token Holdings**: Fetches live ERC-20 token balances (e.g. USDT, MDOGE) with logos and decimals.
+- **Real Token Holdings**: Fetches live ERC-20 token balances with logos and decimals.
 
 ### 2. ⚡ Live 1-Click On-Chain Token Revoke Tool
-- Directly triggers an ERC-20 `token.approve(spender, 0)` transaction on Bohr Testnet.
+- Directly triggers an ERC-20 `token.approve(spender, 0)` transaction on BOT Chain Mainnet.
 - Eliminates third-party drainer risk with one click.
 
 ### 3. 📉 Worst-Case Drain Risk Simulator
@@ -57,15 +58,15 @@ Users connect their Web3 wallet and pay **0.1 BOT** to unlock a deep dossier fea
 - Shows how 1-click revoking reduces theoretical drain risk to **$0.00 (100% Protected)**.
 
 ### 4. 👑 "On-Chain Wrapped" & Viral Social Cards
-- Computes automated DeFi persona titles: *Bohr Pioneer*, *Gas Contributor*, *Ecosystem Whale*, *Diamond Hands*.
+- Computes automated DeFi persona titles: *BOT Chain Pioneer*, *Gas Contributor*, *Ecosystem Whale*, *Diamond Hands*.
 - **1-Click High-Res PNG Generator**: Downloadable infographic card with direct Twitter / X and Telegram share shortcuts.
 
 ### 5. ⚔️ Wallet VS Wallet (Degen Battle Mode)
-- Compare two Bohr wallets side-by-side (Gas Burned, Portfolio Value, Genesis Age, Health Score).
+- Compare two BOT Chain wallets side-by-side (Gas Burned, Portfolio Value, Genesis Age, Health Score).
 - Generates a split-screen versus card ready for social sharing.
 
-### 6. 🏆 Bohr Ecosystem Leaderboard
-- Real-time ranking of top wallets on Bohr Testnet by **Native BOT Balance**, **Lifetime Gas Burned**, and **Genesis Age**.
+### 6. 🏆 BOT Chain Ecosystem Leaderboard
+- Real-time ranking of top wallets on BOT Chain Mainnet by **Native BOT Balance**, **Lifetime Gas Burned**, and **Genesis Age**.
 - Direct 1-click "Audit" button on any row.
 
 ### 7. 🤖 24/7 Telegram & Threat Alerts
@@ -82,10 +83,10 @@ explorer bot/
 │   │   ├── ExplorerPayment.sol         # Main 0.1 BOT pay-per-scan contract
 │   │   └── ExplorerPayment_Flattened.sol # Verified flattened source
 │   ├── scripts/
-│   │   └── deploy.js                  # Deployment script for Bohr Testnet
+│   │   └── deploy.js                  # Deployment script for BOT Chain Mainnet
 │   ├── test/
-│   │   └── ExplorerPayment.test.js     # 5/5 Passing Hardhat unit tests
-│   ├── hardhat.config.js              # Bohr Network configuration
+│   │   └── ExplorerPayment.test.js     # 6/6 Passing Hardhat unit tests
+│   ├── hardhat.config.js              # BOT Chain Mainnet configuration
 │   └── package.json
 │
 └── frontend/                           # Next.js 14 App Router (TypeScript + Tailwind)
@@ -107,17 +108,17 @@ explorer bot/
     │   │   ├── ShareableCard.tsx      # High-res PNG exportable social card
     │   │   ├── PortfolioMatrix.tsx    # Token balances, dust filter & NFT showroom
     │   │   ├── WalletBattle.tsx       # Side-by-side wallet versus battle
-    │   │   ├── Leaderboard.tsx        # Real live Bohr ecosystem rankings
+    │   │   ├── Leaderboard.tsx        # Real live BOT Chain ecosystem rankings
     │   │   ├── TelegramAlertsModal.tsx# 24/7 wallet threat monitoring setup
     │   │   ├── ScanAnimation.tsx      # High-tech cyberpunk radar overlay
     │   │   └── PaywallModal.tsx       # 0.1 BOT payment & free demo preview
     │   ├── config/
-    │   │   ├── chains.ts              # Bohr Testnet definition (Chain ID 968)
+    │   │   ├── chains.ts              # BOT Chain Mainnet definition (Chain ID 677)
     │   │   └── appkit.ts              # Reown AppKit + Wagmi setup
     │   ├── context/
     │   │   └── Web3Provider.tsx       # QueryClient + Wagmi provider
     │   ├── services/
-    │   │   └── bohrScanner.ts         # Live Bohr RPC & BohrScan API data parser
+    │   │   └── bohrScanner.ts         # Live BOT Chain RPC & BotScan API data parser
     │   └── types/
     │       └── scanner.ts             # TypeScript definitions
     ├── tailwind.config.ts
@@ -139,8 +140,8 @@ npm install
 # Run unit tests
 npx hardhat test
 
-# Deploy to Bohr Testnet
-npx hardhat run scripts/deploy.js --network bohrTestnet
+# Deploy to BOT Chain Mainnet
+npx hardhat run scripts/deploy.js --network botchainMainnet
 ```
 
 ### 2. Frontend Application
@@ -165,4 +166,4 @@ Open **[http://localhost:3000](http://localhost:3000)** in your browser.
 ---
 
 ## 📜 License
-MIT License. Built for the **Bohr Network** ecosystem.
+MIT License. Built for the **BOT Chain** ecosystem.

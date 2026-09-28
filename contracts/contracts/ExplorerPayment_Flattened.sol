@@ -9,8 +9,8 @@ pragma solidity ^0.8.20;
 
 /**
  * @title ExplorerPayment
- * @dev On-chain payment receiver and scan registry for Explorer Bot on Bohr Network.
- * Charges 0.1 BOT (native token) per wallet scan.
+ * @dev On-chain payment receiver and scan registry for Explorer Bot on BOT Chain Mainnet.
+ * Charges 0.1 BOT (native token) per pro wallet scan, with gas-only free tier registration.
  */
 contract ExplorerPayment {
     address public owner;
@@ -35,12 +35,21 @@ contract ExplorerPayment {
     // Mapping: payer => lifetime scans purchased
     mapping(address => uint256) public userScanCount;
 
+    uint256 public totalFreeScans;
+    uint256 public totalPaidScans;
+
     // Events
     event ScanPaid(
         uint256 indexed scanId,
         address indexed payer,
         address indexed targetWallet,
         uint256 feePaid,
+        uint256 timestamp
+    );
+    event FreeScanRegistered(
+        uint256 indexed scanId,
+        address indexed payer,
+        address indexed targetWallet,
         uint256 timestamp
     );
     event FeeUpdated(uint256 oldFee, uint256 newFee);
@@ -57,7 +66,29 @@ contract ExplorerPayment {
     }
 
     /**
-     * @notice Pay 0.1 BOT to trigger an on-chain wallet intelligence scan
+     * @notice Register a free tier scan on-chain (Gas-only transaction, 0 protocol fee)
+     * @param targetWallet The wallet address being investigated
+     */
+    function registerFreeScan(address targetWallet) external returns (uint256 scanId) {
+        require(targetWallet != address(0), "Invalid target wallet");
+
+        scanId = ++totalScans;
+        totalFreeScans++;
+        walletScanCount[targetWallet]++;
+        userScanCount[msg.sender]++;
+
+        scanRecords[scanId] = ScanRecord({
+            payer: msg.sender,
+            targetWallet: targetWallet,
+            feePaid: 0,
+            timestamp: block.timestamp
+        });
+
+        emit FreeScanRegistered(scanId, msg.sender, targetWallet, block.timestamp);
+    }
+
+    /**
+     * @notice Pay 0.1 BOT to trigger an on-chain pro wallet intelligence scan
      * @param targetWallet The wallet address being investigated
      */
     function payForScan(address targetWallet) external payable returns (uint256 scanId) {
@@ -65,6 +96,7 @@ contract ExplorerPayment {
         require(targetWallet != address(0), "Invalid target wallet");
 
         scanId = ++totalScans;
+        totalPaidScans++;
         totalFeesCollected += msg.value;
         walletScanCount[targetWallet]++;
         userScanCount[msg.sender]++;

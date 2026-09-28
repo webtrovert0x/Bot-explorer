@@ -10,7 +10,7 @@ describe("ExplorerPayment Contract", function () {
 
   beforeEach(async function () {
     [owner, user1, user2] = await ethers.getSigners();
-    const ExplorerPayment = await ethers.getContractFactory("ExplorerPayment");
+    const ExplorerPayment = await ethers.getContractFactory("contracts/ExplorerPayment.sol:ExplorerPayment");
     paymentContract = await ExplorerPayment.deploy();
     await paymentContract.waitForDeployment();
   });
@@ -20,7 +20,7 @@ describe("ExplorerPayment Contract", function () {
     expect(await paymentContract.scanFee()).to.equal(ethers.parseEther("0.1"));
   });
 
-  it("Should allow user to pay 0.1 BOT for a scan and emit event", async function () {
+  it("Should allow user to pay 0.1 BOT for a pro scan and emit event", async function () {
     const fee = ethers.parseEther("0.1");
     await expect(
       paymentContract.connect(user1).payForScan(targetWallet, { value: fee })
@@ -29,8 +29,23 @@ describe("ExplorerPayment Contract", function () {
       .withArgs(1, user1.address, targetWallet, fee, (val) => val > 0);
 
     expect(await paymentContract.totalScans()).to.equal(1);
+    expect(await paymentContract.totalPaidScans()).to.equal(1);
     expect(await paymentContract.walletScanCount(targetWallet)).to.equal(1);
     expect(await paymentContract.userScanCount(user1.address)).to.equal(1);
+  });
+
+  it("Should allow user to register a free tier scan on-chain (gas only, 0 protocol fee)", async function () {
+    await expect(
+      paymentContract.connect(user2).registerFreeScan(targetWallet)
+    )
+      .to.emit(paymentContract, "FreeScanRegistered")
+      .withArgs(1, user2.address, targetWallet, (val) => val > 0);
+
+    expect(await paymentContract.totalScans()).to.equal(1);
+    expect(await paymentContract.totalFreeScans()).to.equal(1);
+    expect(await paymentContract.walletScanCount(targetWallet)).to.equal(1);
+    expect(await paymentContract.userScanCount(user2.address)).to.equal(1);
+    expect(await paymentContract.totalFeesCollected()).to.equal(0);
   });
 
   it("Should reject payment if less than scan fee", async function () {

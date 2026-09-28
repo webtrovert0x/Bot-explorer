@@ -1,13 +1,13 @@
 import { createAppKit } from "@reown/appkit/react";
 import { WagmiAdapter } from "@reown/appkit-adapter-wagmi";
 import { cookieStorage, createStorage, http } from "wagmi";
-import { bohrTestnet } from "./chains";
+import { botchainMainnet } from "./chains";
 
 // WalletConnect Cloud project ID (from https://cloud.reown.com)
 export const projectId =
   process.env.NEXT_PUBLIC_PROJECT_ID || "c4f79cc821944d9680842e34466bfbd9";
 
-export const networks = [bohrTestnet] as any;
+export const networks = [botchainMainnet] as any;
 
 // Set up Wagmi Adapter
 export const wagmiAdapter = new WagmiAdapter({
@@ -18,7 +18,7 @@ export const wagmiAdapter = new WagmiAdapter({
   projectId,
   networks,
   transports: {
-    [bohrTestnet.id]: http("https://rpc.bohr.life"),
+    [botchainMainnet.id]: http("https://rpc.botchain.ai"),
   },
 });
 
@@ -29,7 +29,7 @@ export const metadata = {
   name: "Explorer Bot",
   description: "AI-Powered On-Chain Intelligence, Drainer Defense & Wallet Wrapped",
   url: "https://explorerbot.life",
-  icons: ["https://scan.bohr.life/images/logo.png"],
+  icons: ["/logo.png"],
 };
 
 // Create Reown AppKit instance
@@ -37,7 +37,7 @@ export const modal = createAppKit({
   adapters: [wagmiAdapter],
   projectId,
   networks,
-  defaultNetwork: bohrTestnet,
+  defaultNetwork: botchainMainnet,
   metadata,
   themeMode: "dark",
   themeVariables: {

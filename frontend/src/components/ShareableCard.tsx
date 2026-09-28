@@ -89,7 +89,7 @@ export function ShareableCard({
                 <h4 className="font-extrabold text-sm tracking-wider uppercase bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
                   EXPLORER.BOT
                 </h4>
-                <p className="text-[10px] text-slate-400 font-mono">BOHR NETWORK (968)</p>
+                <p className="text-[10px] text-slate-400 font-mono">BOT CHAIN MAINNET (677)</p>
               </div>
             </div>
 
@@ -163,7 +163,7 @@ export function ShareableCard({
 
           {/* Footer watermark */}
           <div className="pt-4 border-t border-white/10 flex items-center justify-between text-[10px] text-slate-500 font-mono">
-            <span>AUDITED VIA BOHR TESTNET (968)</span>
+            <span>AUDITED VIA BOT CHAIN MAINNET (677)</span>
             <span className="text-cyan-400">0.1 BOT SCAN FEE</span>
           </div>
         </div>

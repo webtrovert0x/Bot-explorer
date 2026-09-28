@@ -1,15 +1,16 @@
 import { defineChain } from "viem";
 
 /**
- * Bohr Testnet Custom Chain Definition
- * Chain ID: 968
- * RPC: https://rpc.bohr.life
+ * BOT Chain Mainnet Definition
+ * Chain ID: 677
+ * RPC: https://rpc.botchain.ai
  * Native Token: BOT
- * Explorer: https://scan.bohr.life/
+ * Total Supply: 150 Million
+ * Explorer: https://scan.botchain.ai
  */
-export const bohrTestnet = defineChain({
-  id: 968,
-  name: "Bohr Testnet",
+export const botchainMainnet = defineChain({
+  id: 677,
+  name: "BOT Chain Mainnet",
   nativeCurrency: {
     decimals: 18,
     name: "Bohr Token",
@@ -17,18 +18,18 @@ export const bohrTestnet = defineChain({
   },
   rpcUrls: {
     default: {
-      http: ["https://rpc.bohr.life"],
+      http: ["https://rpc.botchain.ai"],
     },
     public: {
-      http: ["https://rpc.bohr.life"],
+      http: ["https://rpc.botchain.ai"],
     },
   },
   blockExplorers: {
     default: {
-      name: "BohrScan",
-      url: "https://scan.bohr.life",
-      apiUrl: "https://scan.bohr.life/api",
+      name: "BotScan",
+      url: "https://scan.botchain.ai",
+      apiUrl: "https://scan.botchain.ai/api",
     },
   },
-  testnet: true,
+  testnet: false,
 });

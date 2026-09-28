@@ -1,5 +1,5 @@
 import { createPublicClient, http, formatEther, formatUnits, isAddress } from "viem";
-import { bohrTestnet } from "@/config/chains";
+import { botchainMainnet } from "@/config/chains";
 import {
   WalletScanReport,
   RiskLevel,
@@ -10,14 +10,15 @@ import {
   SpamDetection,
 } from "@/types/scanner";
 
-// Viem Public Client for Bohr Testnet
+// Viem Public Client for BOT Chain Mainnet (Chain ID 677)
 export const bohrClient = createPublicClient({
-  chain: bohrTestnet,
-  transport: http("https://rpc.bohr.life"),
+  chain: botchainMainnet,
+  transport: http("https://rpc.botchain.ai"),
 });
 
 export const BOT_USD_PRICE = 0.45;
-const BOHR_API_BASE = "https://scan.bohr.life/api/v2";
+export const EXPLORER_BASE = "https://scan.botchain.ai";
+const BOHR_API_BASE = "https://scan.botchain.ai/api/v2";
 
 /**
  * Curated live presets for quick demonstration
@@ -33,13 +34,13 @@ export const DEMO_PRESETS = [
     name: "Genesis Whale & Funder",
     address: "0xf534f5C4759C649e7F04A535bAcfeE0A0E855970",
     label: "15,944 BOT Whale 👑",
-    description: "1,980+ transactions, highest recorded native balance on Bohr Testnet.",
+    description: "1,980+ transactions, highest recorded native balance on BOT Chain Mainnet.",
   },
   {
     name: "Treasury Contract",
-    address: "0x01784C6fcE7E1fB40E9E54E449C0c5AcF9946Fe1",
+    address: "0x5D6c221eE1A0E40fa58CEBAc83A359DCde9bd34f",
     label: "Payment Contract 🛡️",
-    description: "ExplorerPayment deployed smart contract handling 0.1 BOT scan fees.",
+    description: "ExplorerPayment deployed smart contract on BOT Chain Mainnet handling scan fees.",
   },
 ];
 
@@ -427,7 +428,7 @@ export async function scanBohrWallet(addressInput: string): Promise<WalletScanRe
 
   if (realBalanceBOT > 1.0) {
     personas.push({
-      title: "Bohr Staker / Whale",
+      title: "BOT Chain Whale",
       icon: "🐋",
       badgeColor: "from-purple-500 to-pink-600",
       description: `Maintains a strong native balance of ${realBalanceBOT.toFixed(2)} BOT.`,
@@ -437,8 +438,8 @@ export async function scanBohrWallet(addressInput: string): Promise<WalletScanRe
   return {
     address,
     ensOrAlias: address.slice(0, 6) + "..." + address.slice(-4),
-    network: "Bohr Testnet (Chain 968)",
-    chainId: 968,
+    network: "BOT Chain Mainnet (Chain 677)",
+    chainId: 677,
     scanTimestamp: new Date().toISOString(),
     nativeBalanceBOT: +realBalanceBOT.toFixed(4),
     nativeBalanceUSD: +(realBalanceBOT * BOT_USD_PRICE).toFixed(2),
@@ -450,7 +451,7 @@ export async function scanBohrWallet(addressInput: string): Promise<WalletScanRe
           ? "HIGH RISK: Active unlimited token approvals or unverified dust tokens detected on-chain."
           : threatLevel === "MEDIUM"
           ? "MODERATE RISK: Some approvals active. Recommended to review and revoke unused contracts."
-          : "EXCELLENT: No active vulnerabilities or dangerous token approvals found on Bohr Network.",
+          : "EXCELLENT: No active vulnerabilities or dangerous token approvals found on BOT Chain Mainnet.",
       threatLevel,
       unlimitedApprovalsCount: approvals.filter((a) => a.isUnlimited).length,
       compromisedInteractionsCount: 0,

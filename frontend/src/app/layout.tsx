@@ -3,9 +3,9 @@ import "./globals.css";
 import { Web3Provider } from "@/context/Web3Provider";
 
 export const metadata: Metadata = {
-  title: "Explorer Bot | On-Chain Intelligence, Drainer Defense & Wrapped on Bohr Network",
+  title: "Explorer Bot | On-Chain Intelligence, Drainer Defense & Wrapped on BOT Chain Mainnet",
   description:
-    "AI-powered blockchain intelligence scanner on Bohr Testnet. Audit smart contract approvals, lifetime gas burned, wallet health score, and on-chain milestones for 0.1 BOT.",
+    "AI-powered blockchain intelligence scanner on BOT Chain Mainnet. Audit smart contract approvals, lifetime gas burned, wallet health score, and on-chain milestones for 0.1 BOT.",
   icons: {
     icon: "/logo.png",
     apple: "/logo.png",
@@ -35,20 +35,20 @@ export default function RootLayout({
                 <div className="flex items-center gap-2">
                   <span className="font-bold text-white font-mono">EXPLORER.BOT</span>
                   <span>•</span>
-                  <span>Bohr Testnet (Chain ID 968)</span>
+                  <span>BOT Chain Mainnet (Chain ID 677)</span>
                 </div>
 
                 <div className="flex items-center gap-4 text-slate-400">
                   <a
-                    href="https://scan.bohr.life/"
+                    href="https://scan.botchain.ai/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="hover:text-cyan-400 transition-colors"
                   >
-                    BohrScan
+                    BotScan
                   </a>
                   <a
-                    href="https://rpc.bohr.life"
+                    href="https://rpc.botchain.ai"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="hover:text-cyan-400 transition-colors"

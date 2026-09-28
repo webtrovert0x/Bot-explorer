@@ -92,7 +92,7 @@ export function RevokeModal({ approval, onClose, onSuccess }: RevokeModalProps) 
         {(isConfirmed || isSuccessLocal) && (
           <div className="mb-4 p-3 bg-emerald-500/20 border border-emerald-500/40 rounded-xl text-xs text-emerald-300 flex items-center gap-2">
             <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-            <span>Successfully revoked approval on Bohr Testnet!</span>
+            <span>Successfully revoked approval on BOT Chain Mainnet!</span>
           </div>
         )}
 

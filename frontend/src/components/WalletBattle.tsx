@@ -126,7 +126,7 @@ export function WalletBattle() {
           >
             {/* Header */}
             <div className="flex justify-between items-center pb-4 border-b border-white/10">
-              <span className="font-mono text-xs font-bold text-cyan-400">BOHR NETWORK (968)</span>
+              <span className="font-mono text-xs font-bold text-cyan-400">BOT CHAIN MAINNET (677)</span>
               <span className="px-3 py-1 rounded-full text-[10px] font-bold bg-purple-500/20 text-purple-300 border border-purple-500/40">
                 OFFICIAL BATTLE REPORT
               </span>

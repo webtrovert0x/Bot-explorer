@@ -45,17 +45,17 @@ export function TransactionHistory({ transactions, targetAddress }: TransactionH
         <div>
           <h3 className="text-xl font-bold text-white">Recent On-Chain Activity</h3>
           <p className="text-xs text-slate-400">
-            Validated ledger transactions on Bohr Testnet
+            Validated ledger transactions on BOT Chain Mainnet
           </p>
         </div>
 
         <a
-          href={`https://scan.bohr.life/address/${targetAddress}`}
+          href={`https://scan.botchain.ai/address/${targetAddress}`}
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-1.5 text-xs text-cyan-400 hover:text-cyan-300 font-semibold"
         >
-          <span>View on BohrScan</span>
+          <span>View on BotScan</span>
           <ExternalLink className="w-3.5 h-3.5" />
         </a>
       </div>
@@ -69,7 +69,7 @@ export function TransactionHistory({ transactions, targetAddress }: TransactionH
               <th className="pb-3">Time</th>
               <th className="pb-3 text-right">Value (BOT)</th>
               <th className="pb-3 text-right">Gas Used</th>
-              <th className="pb-3 text-right">BohrScan</th>
+              <th className="pb-3 text-right">BotScan</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-white/5">
@@ -113,7 +113,7 @@ export function TransactionHistory({ transactions, targetAddress }: TransactionH
 
                   <td className="py-3.5 text-right">
                     <a
-                      href={`https://scan.bohr.life/tx/${tx.hash}`}
+                      href={`https://scan.botchain.ai/tx/${tx.hash}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex p-1.5 rounded-lg bg-white/5 hover:bg-white/10 text-slate-300 hover:text-cyan-400 transition-colors"

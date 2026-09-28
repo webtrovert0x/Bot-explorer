@@ -42,14 +42,14 @@ export function Leaderboard({ onSelectAddress }: LeaderboardProps) {
       <div className="text-center space-y-2">
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold bg-gradient-to-r from-amber-500/10 via-yellow-500/10 to-cyan-500/10 border border-amber-500/30 text-amber-300">
           <Crown className="w-3.5 h-3.5 text-amber-400" />
-          <span>Bohr Network Real On-Chain Hall of Fame</span>
+          <span>BOT Chain Mainnet Real On-Chain Hall of Fame</span>
         </div>
 
         <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
           Live Ecosystem Leaderboard
         </h2>
         <p className="text-xs sm:text-sm text-slate-400 max-w-lg mx-auto">
-          Real live wallet rankings fetched directly from Bohr Testnet RPC & Explorer.
+          Real live wallet rankings fetched directly from BOT Chain Mainnet RPC & Explorer.
         </p>
       </div>
 
@@ -105,7 +105,7 @@ export function Leaderboard({ onSelectAddress }: LeaderboardProps) {
         {loading && entries.length === 0 ? (
           <div className="py-16 text-center space-y-3">
             <RefreshCw className="w-8 h-8 text-cyan-400 animate-spin mx-auto" />
-            <p className="text-xs font-mono text-cyan-300">Querying live Bohr Testnet ledger data...</p>
+            <p className="text-xs font-mono text-cyan-300">Querying live BOT Chain Mainnet ledger data...</p>
           </div>
         ) : (
           <div className="overflow-x-auto">
