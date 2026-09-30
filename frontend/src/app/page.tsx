@@ -14,7 +14,7 @@ import { Leaderboard } from "@/components/Leaderboard";
 import { TelegramAlertsModal } from "@/components/TelegramAlertsModal";
 import { scanBohrWallet } from "@/services/bohrScanner";
 import { WalletScanReport } from "@/types/scanner";
-import { Shield, Sparkles, Coins, History, ExternalLink, Copy, Check } from "lucide-react";
+import { Shield, Sparkles, Coins, History, ExternalLink, Copy, Check, ArrowUpRight } from "lucide-react";
 import { useAccount } from "wagmi";
 
 export default function Home() {
@@ -264,6 +264,113 @@ export default function Home() {
           onClose={() => setShowAlertsModal(false)}
         />
       )}
+
+      {/* Official BOT Chain Ecosystem Footer */}
+      <footer className="mt-20 border-t border-white/10 bg-[#06090e]/80 backdrop-blur-xl">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+            {/* Col 1: Brand */}
+            <div className="space-y-3 md:col-span-2">
+              <div className="flex items-center gap-3">
+                <div className="w-9 h-9 rounded-xl bg-cyan-500/20 border border-cyan-500/40 flex items-center justify-center">
+                  <Shield className="w-5 h-5 text-cyan-400" />
+                </div>
+                <span className="text-lg font-extrabold text-white tracking-wider">
+                  EXPLORER<span className="text-cyan-400">.BOT</span>
+                </span>
+                <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-cyan-500/10 text-cyan-300 border border-cyan-500/30">
+                  MAINNET 677
+                </span>
+              </div>
+              <p className="text-xs text-slate-400 max-w-sm leading-relaxed">
+                Real-time on-chain security intelligence, wallet health audits, 1-click token revokes, and viral on-chain dossiers natively built for BOT Chain Mainnet.
+              </p>
+            </div>
+
+            {/* Col 2: BOT Chain Ecosystem Links */}
+            <div className="space-y-2">
+              <span className="text-xs font-bold uppercase tracking-wider text-slate-300">
+                BOT Chain Ecosystem
+              </span>
+              <ul className="space-y-1.5 text-xs text-slate-400">
+                <li>
+                  <a
+                    href="https://botchain.ai"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-cyan-400 flex items-center gap-1 transition-colors"
+                  >
+                    <span>BOT Chain Website</span>
+                    <ArrowUpRight className="w-3 h-3 text-slate-500" />
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://scan.botchain.ai"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-cyan-400 flex items-center gap-1 transition-colors"
+                  >
+                    <span>BOT Chain Explorer</span>
+                    <ArrowUpRight className="w-3 h-3 text-slate-500" />
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://rpc.botchain.ai"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-cyan-400 flex items-center gap-1 transition-colors"
+                  >
+                    <span>Mainnet RPC (Chain 677)</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            {/* Col 3: Smart Contract & Audits */}
+            <div className="space-y-2">
+              <span className="text-xs font-bold uppercase tracking-wider text-slate-300">
+                Verified Contract
+              </span>
+              <ul className="space-y-1.5 text-xs text-slate-400">
+                <li>
+                  <a
+                    href="https://scan.botchain.ai/address/0x5D6c221eE1A0E40fa58CEBAc83A359DCde9bd34f#code"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-emerald-400 flex items-center gap-1 transition-colors text-emerald-400/90 font-mono"
+                  >
+                    <span>ExplorerPayment (Verified)</span>
+                    <ArrowUpRight className="w-3 h-3 text-emerald-500" />
+                  </a>
+                </li>
+                <li>
+                  <span className="text-[11px] text-slate-500 font-mono">
+                    0x5D6c...bd34f
+                  </span>
+                </li>
+                <li className="pt-1 text-[11px] text-slate-400">
+                  Dual-tier scan system (Gas-Only Free & 0.1 BOT Pro)
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+            <p>© 2026 Explorer Bot. Built natively for BOT Chain Mainnet.</p>
+            <div className="flex items-center gap-4">
+              <a href="https://botchain.ai" target="_blank" rel="noopener noreferrer" className="hover:text-slate-300 transition-colors">
+                botchain.ai
+              </a>
+              <span>•</span>
+              <a href="https://scan.botchain.ai" target="_blank" rel="noopener noreferrer" className="hover:text-slate-300 transition-colors">
+                scan.botchain.ai
+              </a>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
