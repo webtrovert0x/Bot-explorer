@@ -85,7 +85,7 @@ export function Navbar({ currentView = "EXPLORER", onSelectView, onOpenAlerts }:
                   : "text-slate-400 hover:text-white"
               }`}
             >
-              Explorer
+              Radar Scan
             </button>
             <button
               onClick={() => onSelectView?.("BATTLE")}
@@ -109,6 +109,40 @@ export function Navbar({ currentView = "EXPLORER", onSelectView, onOpenAlerts }:
               <Trophy className="w-3.5 h-3.5 text-yellow-400" />
               <span>Leaderboard</span>
             </button>
+
+            <div className="w-px h-4 bg-white/10 mx-1" />
+
+            <a
+              href="https://scan.botchain.ai"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-semibold text-slate-400 hover:text-cyan-300 hover:bg-white/5 transition-all group"
+              title="Open Official BotScan Explorer"
+            >
+              <img
+                src="/botchain.jpeg"
+                alt="BotScan Explorer"
+                className="w-3.5 h-3.5 rounded-full object-cover shrink-0 ring-1 ring-white/10 group-hover:ring-cyan-400/50 transition-all"
+              />
+              <span>Explorer</span>
+              <ArrowUpRight className="w-3 h-3 text-slate-500 group-hover:text-cyan-400 transition-colors" />
+            </a>
+
+            <a
+              href="https://www.botchain.ai/en/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-semibold text-slate-400 hover:text-cyan-300 hover:bg-white/5 transition-all group"
+              title="Open Official BOT Chain Website"
+            >
+              <img
+                src="/botchain.jpeg"
+                alt="BOT Chain"
+                className="w-3.5 h-3.5 rounded-full object-cover shrink-0 ring-1 ring-white/10 group-hover:ring-cyan-400/50 transition-all"
+              />
+              <span>BOT Chain</span>
+              <ArrowUpRight className="w-3 h-3 text-slate-500 group-hover:text-cyan-400 transition-colors" />
+            </a>
           </nav>
         </div>
 
