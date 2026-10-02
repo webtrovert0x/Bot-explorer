@@ -57,8 +57,8 @@ export function HeroSearch({ onInitiateScan, isScanning }: HeroSearchProps) {
           <div className="absolute inset-0 rounded-3xl bg-gradient-to-tr from-cyan-500 to-purple-600 blur-xl opacity-50 group-hover:opacity-80 transition-opacity animate-pulse" />
           <div className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-3xl overflow-hidden border-2 border-cyan-400/40 shadow-2xl shadow-cyan-500/30 bg-[#080b11]">
             <img
-              src="/logo.png"
-              alt="Explorer Bot"
+              src="/botchain.jpeg"
+              alt="BOT Chain Explorer Logo"
               className="w-full h-full object-cover"
             />
           </div>
