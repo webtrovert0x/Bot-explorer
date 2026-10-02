@@ -289,19 +289,31 @@ export default function Home() {
 
             {/* Col 2: BOT Chain Ecosystem Links */}
             <div className="space-y-2">
-              <span className="text-xs font-bold uppercase tracking-wider text-slate-300">
-                BOT Chain Ecosystem
-              </span>
-              <ul className="space-y-1.5 text-xs text-slate-400">
+              <div className="flex items-center gap-2">
+                <img
+                  src="/botchain.jpeg"
+                  alt="BOT Chain Logo"
+                  className="w-5 h-5 rounded-full object-cover shrink-0 ring-1 ring-cyan-500/40"
+                />
+                <span className="text-xs font-bold uppercase tracking-wider text-slate-200">
+                  BOT Chain Ecosystem
+                </span>
+              </div>
+              <ul className="space-y-2 text-xs text-slate-400">
                 <li>
                   <a
-                    href="https://botchain.ai"
+                    href="https://www.botchain.ai/en/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hover:text-cyan-400 flex items-center gap-1 transition-colors"
+                    className="hover:text-cyan-400 flex items-center gap-2 transition-colors group"
                   >
+                    <img
+                      src="/botchain.jpeg"
+                      alt="BOT Chain"
+                      className="w-4 h-4 rounded-full object-cover shrink-0 ring-1 ring-white/10 group-hover:ring-cyan-400/50 transition-all"
+                    />
                     <span>BOT Chain Website</span>
-                    <ArrowUpRight className="w-3 h-3 text-slate-500" />
+                    <ArrowUpRight className="w-3 h-3 text-slate-500 group-hover:text-cyan-400 transition-colors" />
                   </a>
                 </li>
                 <li>
@@ -309,10 +321,15 @@ export default function Home() {
                     href="https://scan.botchain.ai"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hover:text-cyan-400 flex items-center gap-1 transition-colors"
+                    className="hover:text-cyan-400 flex items-center gap-2 transition-colors group"
                   >
+                    <img
+                      src="/botchain.jpeg"
+                      alt="BOT Chain Explorer"
+                      className="w-4 h-4 rounded-full object-cover shrink-0 ring-1 ring-white/10 group-hover:ring-cyan-400/50 transition-all"
+                    />
                     <span>BOT Chain Explorer</span>
-                    <ArrowUpRight className="w-3 h-3 text-slate-500" />
+                    <ArrowUpRight className="w-3 h-3 text-slate-500 group-hover:text-cyan-400 transition-colors" />
                   </a>
                 </li>
                 <li>
@@ -320,7 +337,7 @@ export default function Home() {
                     href="https://rpc.botchain.ai"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hover:text-cyan-400 flex items-center gap-1 transition-colors"
+                    className="hover:text-cyan-400 flex items-center gap-2 transition-colors group pl-6"
                   >
                     <span>Mainnet RPC (Chain 677)</span>
                   </a>
@@ -339,18 +356,23 @@ export default function Home() {
                     href="https://scan.botchain.ai/address/0x5D6c221eE1A0E40fa58CEBAc83A359DCde9bd34f#code"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hover:text-emerald-400 flex items-center gap-1 transition-colors text-emerald-400/90 font-mono"
+                    className="hover:text-emerald-400 flex items-center gap-1.5 transition-colors text-emerald-400/90 font-mono"
                   >
+                    <img
+                      src="/botchain.jpeg"
+                      alt="BOT Chain"
+                      className="w-3.5 h-3.5 rounded-full object-cover shrink-0"
+                    />
                     <span>ExplorerPayment (Verified)</span>
                     <ArrowUpRight className="w-3 h-3 text-emerald-500" />
                   </a>
                 </li>
                 <li>
-                  <span className="text-[11px] text-slate-500 font-mono">
+                  <span className="text-[11px] text-slate-500 font-mono pl-5">
                     0x5D6c...bd34f
                   </span>
                 </li>
-                <li className="pt-1 text-[11px] text-slate-400">
+                <li className="pt-1 text-[11px] text-slate-400 pl-5">
                   Dual-tier scan system (Gas-Only Free & 0.1 BOT Pro)
                 </li>
               </ul>
@@ -360,12 +382,14 @@ export default function Home() {
           <div className="pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
             <p>© 2026 Explorer Bot. Built natively for BOT Chain Mainnet.</p>
             <div className="flex items-center gap-4">
-              <a href="https://botchain.ai" target="_blank" rel="noopener noreferrer" className="hover:text-slate-300 transition-colors">
-                botchain.ai
+              <a href="https://www.botchain.ai/en/" target="_blank" rel="noopener noreferrer" className="hover:text-slate-300 flex items-center gap-1.5 transition-colors">
+                <img src="/botchain.jpeg" alt="BOT Chain" className="w-3.5 h-3.5 rounded-full object-cover" />
+                <span>botchain.ai</span>
               </a>
               <span>•</span>
-              <a href="https://scan.botchain.ai" target="_blank" rel="noopener noreferrer" className="hover:text-slate-300 transition-colors">
-                scan.botchain.ai
+              <a href="https://scan.botchain.ai" target="_blank" rel="noopener noreferrer" className="hover:text-slate-300 flex items-center gap-1.5 transition-colors">
+                <img src="/botchain.jpeg" alt="BOT Chain Explorer" className="w-3.5 h-3.5 rounded-full object-cover" />
+                <span>scan.botchain.ai</span>
               </a>
             </div>
           </div>

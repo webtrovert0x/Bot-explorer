@@ -60,9 +60,13 @@ export function Navbar({ currentView = "EXPLORER", onSelectView, onOpenAlerts }:
                 <span className="text-xl font-extrabold tracking-tight bg-gradient-to-r from-white via-slate-100 to-cyan-300 bg-clip-text text-transparent">
                   EXPLORER<span className="text-cyan-400">.BOT</span>
                 </span>
-                <span className="hidden sm:inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-semibold bg-cyan-500/10 text-cyan-400 border border-cyan-500/30">
-                  <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-ping" />
-                  BOT CHAIN 677
+                <span className="hidden sm:inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-bold bg-cyan-500/10 text-cyan-300 border border-cyan-500/30 shadow-sm shadow-cyan-500/10">
+                  <img
+                    src="/botchain.jpeg"
+                    alt="BOT Chain"
+                    className="w-3.5 h-3.5 rounded-full object-cover ring-1 ring-cyan-400/40"
+                  />
+                  <span>BOT CHAIN 677</span>
                 </span>
               </div>
               <p className="text-[11px] text-slate-400 hidden sm:block">
